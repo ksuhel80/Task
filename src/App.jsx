@@ -3,14 +3,15 @@ import "./App.css";
 import { api } from "./api/api";
 import Product from "./components/Product";
 import Header from "./components/Header";
+import axios from "axios";
 
 function App() {
   const [data, setData] = useState([]);
 
   //getAll Products from API
   const getAllProducts = async () => {
-    const data = await api
-      .post("/product/getAllProduct", {
+    const data = await axios
+      .post("http://3.7.252.58:4001/product/getAllProduct", {
         limit: 100,
         page: 0,
         search: "",
@@ -37,7 +38,7 @@ function App() {
     <>
       <Header />
       <div className="grid grid-flow-row-dense md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mt-10">
-        {console.log(data)}
+  
         {data.length &&
           data.map((item) => (
             <Product
