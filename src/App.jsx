@@ -9,20 +9,35 @@ function App() {
 
   //getAll Products from API
   const getAllProducts = async () => {
-    const data = await api
-      .post("product/getAllProduct", {
-        limit: 100,
-        page: 0,
-        search: "",
-      })
-      .then(function (response) {
-        setData(response.data);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
 
-    return data;
+    const response = await fetch('http://3.7.252.58:4001/product/getAllProduct', {
+	method: 'post',
+	body: JSON.stringify({
+    limit: 100,
+    page: 0,
+    search: "",
+  }),
+	headers: {'Content-Type': 'application/json'}
+});
+const data1 = await response.json();
+
+console.log(data1)
+setData(data1)
+
+    // const data = await api
+    //   .post("product/getAllProduct", {
+    //     limit: 100,
+    //     page: 0,
+    //     search: "",
+    //   })
+    //   .then(function (response) {
+    //     setData(response.data);
+    //   })
+    //   .catch(function (error) {
+    //     console.log(error);
+    //   });
+
+    // return data;
   };
 
   useEffect(() => {
