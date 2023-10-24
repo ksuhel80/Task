@@ -29,6 +29,11 @@ function App() {
     getAllProducts();
   }, []);
 
+  if(data.length == 0)
+  {
+    return <div>Loading...</div>
+  }
+
   return (
     <>
       <Header />
