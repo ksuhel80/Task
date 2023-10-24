@@ -10,7 +10,7 @@ function App() {
   //getAll Products from API
   const getAllProducts = async () => {
     const data = await api
-      .post("product/getAllProduct", {
+      .post("/product/getAllProduct", {
         limit: 100,
         page: 0,
         search: "",
