@@ -3,6 +3,8 @@ import { selectItems, selectTotal } from '../app/slices/basketSlice';
 import { useSelector } from 'react-redux';
 import CartItem from './CartItem';
 
+//Cart Page
+
 const Cart = () => {
     const items = useSelector(selectItems);
     const total = useSelector(selectTotal);

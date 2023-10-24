@@ -13,7 +13,7 @@ import Header from './components/Header'
 function App() {
   const [data, setData] = useState([])
  
-
+//getAll Products from API
   const getAllProducts = async () => {
   const data =  await api.post('product/getAllProduct', {
     limit:100,

@@ -3,6 +3,8 @@ import { StarIcon } from "@heroicons/react/solid";
 import { useDispatch } from "react-redux";
 import { addToBasket } from "../app/slices/basketSlice";
 
+//product card
+
 const Product = ({ name, url, description, price, rating, id }) => {
   const dispatch = useDispatch();
 
@@ -12,10 +14,8 @@ const Product = ({ name, url, description, price, rating, id }) => {
       name,
       price,
       description,
-     
       url,
       rating,
-   
     };
 
     dispatch(addToBasket(product));
