@@ -1,12 +1,7 @@
 import { useEffect, useState } from "react";
-
 import "./App.css";
 import { api } from "./api/api";
-
-import Product from "./components/product";
-
-import { useSelector } from "react-redux";
-import { selectItems } from "./app/slices/basketSlice";
+import Product from "./components/Product";
 import Header from "./components/Header";
 
 function App() {
